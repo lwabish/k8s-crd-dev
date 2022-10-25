@@ -10,6 +10,9 @@ type DemoStatus struct {
 	Ok bool `json:"ok,omitempty"`
 }
 
+// +genclient
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
+
 type Demo struct {
 	metaV1.TypeMeta   `json:",inline"`
 	metaV1.ObjectMeta `json:"metadata,omitempty"`
@@ -17,6 +20,8 @@ type Demo struct {
 	Spec   DemoSpec   `json:"spec"`
 	Status DemoStatus `json:"status"`
 }
+
+// +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 type DemoList struct {
 	metaV1.TypeMeta `json:",inline"`
