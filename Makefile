@@ -9,5 +9,8 @@ install-generator:
 install-apimachinery:
 	go get k8s.io/apimachinery@$(VERSION)
 
+install-client-go:
+	go get k8s.io/client-go@$(VERSION)
+
 generate:
 	hack/update-codegen.sh
